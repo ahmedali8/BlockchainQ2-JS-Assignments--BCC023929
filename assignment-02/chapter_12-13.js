@@ -64,9 +64,7 @@ else {
 var correctPassword = "ABC";
 var password = prompt("Enter password");
 
-var passwordASCI = password.charCodeAt(password);
-
-if (passwordASCI == 0) {
+if (password == '') {
     alert("Please enter your Password");
 }
 else if (password === correctPassword) {
