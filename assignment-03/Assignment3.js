@@ -1,6 +1,5 @@
 ////////////////////// assignment started ///////////////////////////
 
-
 //////// ques1 ///////
 
 var qualifications = ["SSC", "HSC", "BSC", "BS", "BCOM", "MS", "M. Phil.", "PhD"];
@@ -84,10 +83,17 @@ document.write(selectedCities);
 
 
 
-////// ques 5 ////// samajhna he ye sawal 
+////// ques 5 ////// 
 
-var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+var uniqueArray = [];  //empty array bnaya he ta k tamam unique values ko isme store krwadein
 
+for (var i = 0; i < arr1.length; i++) {
+    if (uniqueArray.indexOf( arr1[i] ) === -1) {     //agr arr1 ka koi element pehly se mojud hoga to uska index number dedega otherwise -1 dega jis se pta lgjayga k wo mojud nhi he then hum usy push k through add krwadeingy
+        uniqueArray.push(arr1[i]);
+    }
+}
+document.write(uniqueArray);
 
 
 
@@ -98,17 +104,35 @@ var aCities = ["Karachi", "Lahore", "Islamabad", "Faisalabad"];
 var o = ["th","st","nd","rd"];
 
 for (var i = 0; i < 3; i++) {
-    document.write("<br>" + (i+1) + "st choice is " + aCities[i] + "</br>");
+    document.write("<br>" + (i+1) + o[i+1] + " choice is " + aCities[i] + "</br>");
 
 }
 
 
 
 
-//////// ques 7 //////// nhi ho rha ye sawal
+//////// ques 7 //////// 
 
+//method 1
 var a = [10,20,4,40,60,70];
 var b = [1,2,3,4,5,6,7,8,9,10];
+var newArray = [...new Set([...b, ...a])];
+document.write(newArray);
+
+
+
+//method 2
+var a = [10,20,4,40,60,70];
+var b = [1,2,3,4,5,6,7,8,9,10];
+var c = [].concat(b, a);
+var newArr = [];
+
+for (var i = 0; i < c.length; i++) {
+    if (newArr.indexOf( c[i] ) === -1) {
+        newArr.push( c[i] );
+    }
+}
+document.write(newArr);
 
 
 
@@ -180,30 +204,16 @@ for (var i = 0; i <= 20; i+=2) {
 
 
 
-////// ques 9 /////  is sawal ko mene ascending order me covert kr k last element ko output me dikha dia he. Kindly ye sawal mujhy dusry method se bhi samjhadijiayga
+////// ques 9 ///// 
+
 var a = [24, 53, 78, 91, 12];
-var A = [24, 53, 78, 91, 12];
-//        i, j
-var B = [];
-
-/* ascending order me sorting */
-for (var i = 0; i < A.length; i++) {
-    for (var j = i+1; j <= A.length; j++) {
-        if (A[i] > A[j]) {
-
-            B[i] = A[i];
-            A[i] = A[j];
-            A[j] = B[i];
-        }
+var largest = 0;
+for (var i = 0; i < a.length; i++) {
+    if (a[i] > largest) {
+        largest = a[i];
     }
 }
-
-var largestNum = A.slice(4, 5);
-
-document.write("<br>" + "Array items: " + a + "</br>");
-document.write("<br>" + "The largest number is " + largestNum + "</br>");
-
-
+document.write(largest);
 
 
 
@@ -230,4 +240,4 @@ for (var i = 0; i < A.length; i++) {
 document.write("<br>" + "Ascending order is: " + A + "</br>"); // smallest to largest number 
 
 
-////////////////////////////////////////////// assignment completed ///////////////////////////////////////
+//////////////////////////////////////////// assignment completed ///////////////////////////////////////
