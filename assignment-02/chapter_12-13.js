@@ -58,13 +58,13 @@ else {
 
 
 
-///// ques5 ////// isme msla he mujhy
+///// ques5 //////
 
 
 var correctPassword = "ABC";
 var password = prompt("Enter password");
 
-if (password == '') {
+if (password == "") {
     alert("Please enter your Password");
 }
 else if (password === correctPassword) {
